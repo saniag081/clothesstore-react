@@ -1,0 +1,17 @@
+.categoryes{
+	&-content{
+		padding: 1.8rem 1rem 1rem 1rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-around;
+		gap: 1rem;
+	}
+}
+
+@media(max-width: 651px){
+	.categoryes{
+		&-content{
+			grid-template-columns: 1fr;
+		}
+	}
+}

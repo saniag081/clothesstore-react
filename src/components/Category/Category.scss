@@ -1,0 +1,17 @@
+.category-box{
+	background-color: var(--grey-color);
+	position: relative;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&-title{
+		position: absolute;
+		text-align: center;
+		bottom: 28px;
+		color: var(--white-color);
+		font-size: 30px;
+	}
+}

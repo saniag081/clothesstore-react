@@ -1,0 +1,38 @@
+.card{
+	max-width: 400px;
+	margin: auto;
+	border: 1px solid var(--grey-color);
+	&-img{
+		width: 100%;
+		margin: 0;
+		max-width: 300px;
+		img{
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	&-info{
+		background-color: var(--grey-light);
+		padding: 1rem 2.5rem;
+		border: 1px solid var(--grey-color);
+		&-title{
+			margin-top: 0;
+			font-weight: 500;
+			font-size: 20px;
+		}
+		&-price{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: .8rem;
+			font-size: 20px;
+			:first-child{
+				color: var(--purpure-color);
+				font-weight: 500;
+			}
+			:last-child{
+				text-decoration: line-through;
+				color: var(--grey-bold);
+			}
+		}
+	}
+}

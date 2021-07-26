@@ -1,5 +1,16 @@
-.c-btn-primary{
-	border: 1px solid var(--black-color);
-	background-color: var(--white-color);
-	padding: .4rem 0rem;
+.c-btn{
+	&-primary{
+		border: 1px solid var(--black-color);
+		background-color: var(--white-color);
+		padding: .4rem .3rem;
+		cursor: pointer;
+	}
+	&-secundary{
+		width: 100%;
+		background-color: var(--black-color);
+		color: var(--white-color);
+		border: none;
+		padding: .7rem 1.5rem;
+		cursor: pointer;
+	}
 }
