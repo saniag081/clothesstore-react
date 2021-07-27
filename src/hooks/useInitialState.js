@@ -2,18 +2,26 @@ import {useState} from 'react'
 import initialState from '../initialState';
 
 function useInitialState() {
-	const [getState, setState] = useState(initialState);
+	const [state, setState] = useState(initialState);
 
 	const addToCar = payload => {
-		setState((state) => ({
-			...state,
-			cart: [state.cart, payload]
+		setState((beforeState) => ({
+			...beforeState,
+			cart: [beforeState.cart, payload]
+		}))
+	}
+
+	const setIsShowNav = (payload) => {
+		setState((beforeState) => ({
+			...beforeState,
+			isShowNav: payload
 		}))
 	}
 
 	return {
-		getState,
-		addToCar
+		addToCar,
+		setIsShowNav,
+		state
 	}
 }
 

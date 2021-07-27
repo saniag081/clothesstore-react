@@ -1,19 +1,15 @@
-import Header from '../../components/Header'
-import Nav from '../../components/Nav'
-import SeectionCategorys from '../../components/SectionCategorys'
-import SectionSales from '../../components/SectionSales'
-import MostWantedProducts from '../../components/MostWantedProducts'
-import Footer from '../../components/Footer'
+import SeectionCategorys from '../../components/SectionCategorys';
+import SectionSales from '../../components/SectionSales';
+import MostWantedProducts from '../../components/MostWantedProducts';
+// import { useHistory } from 'react-router-dom'
 
 function Home() {
+	// const history = useHistory();
 	return (
 		<>
-			<Header />
-			<Nav />
 			<SectionSales />
 			<SeectionCategorys />
 			<MostWantedProducts />
-			<Footer />
 		</>
 	)
 }

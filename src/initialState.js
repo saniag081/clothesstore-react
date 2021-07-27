@@ -1,7 +1,8 @@
 let initialState = {
 	cart: [],
 	search: [],
-	products: []
+	products: [],
+	isShowNav: false
 }
 
 export default initialState;

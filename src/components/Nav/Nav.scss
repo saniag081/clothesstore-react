@@ -2,6 +2,7 @@
 	background-color: var(--black-color);
 	color: var(--white-color);
 	padding: .6rem 0;
+	transition: .8s;
 	&-close{
 		display: none;
 		text-align: end;
@@ -36,15 +37,16 @@
 
 @media(max-width: 757px){
 	.nav{
+		z-index: 2;
 		box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.56);
 		background-color: var(--white-color);
 		color: var(--black-color);
 		padding: 1.5rem;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		width: 80%;
-		right: 110%;
+		left: -105%;
 		&-close{
 			display: block;
 		}
@@ -55,5 +57,8 @@
 				border: none;
 			}
 		}
+	}
+	.is-active{
+		left: 0;
 	}
 }

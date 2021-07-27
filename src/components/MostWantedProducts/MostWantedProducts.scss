@@ -6,10 +6,4 @@
 		margin: 0;
 		margin-bottom: 2.5rem;
 	}
-	&-content{
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
-		justify-content: space-around;
-		gap: 1.5rem;
-	}
 }

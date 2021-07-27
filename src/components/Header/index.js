@@ -1,15 +1,24 @@
+import { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 import Wrapper from '../Wrapper'
 import Button from '../Button'
 import Search from '../Search'
 import './Header.scss'
 
 function Header() {
+	const { state, setIsShowNav } = useContext(AppContext);
+	const { isShowNav } = state
+
+	const handleToggleNav = () => {
+		setIsShowNav(!isShowNav)
+	}
+
 	return (
 		<header className="header">
 			<Wrapper>
 				<div className="header-container">
 					<div className="header-container-top">
-						<span className="material-icons btn-menu">menu</span>
+						<span className="material-icons btn-menu" onClick={handleToggleNav} >menu</span>
 						<h3 className="header-container-title">CLOTHESSTORE</h3>
 						<span className="material-icons shopping">shopping_cart</span>
 					</div>
