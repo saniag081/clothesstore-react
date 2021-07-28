@@ -30,3 +30,12 @@
 		}
 	}
 }
+
+@media(max-width: 800px){
+	.footer{
+		&-box{
+			width: 270px;
+			justify-content: space-around;
+		}
+	}
+}

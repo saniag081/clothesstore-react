@@ -1,18 +1,26 @@
-import { useEffect } from 'react'
+import { useContext } from 'react';
+import useFetchDataApi from '../../hooks/useFetchDataApi';
+import AppContext from '../../context/AppContext';
+import ListProducts from '../../components/ListProducts';
+import './FindProduct.scss'
 
 function FindProduct({match}) {
-	const API = `https://api.mercadolibre.com/sites/MCO/search?q=`
-	const product = match.params
+	const API = `sites/MCO/search?q=`;
+	const product = match.params.id;
+	const { addToCar } = useContext(AppContext);
 
-	useEffect(() => {
-		fetch(`${API}${product}`)
-			.then(response => response.json())
-			.then(data => console.log(data))
-	}, [API, product])
+	const {isLoading, response } = useFetchDataApi(API, product)
+
+	const handleAddToCar = (product) => {
+		addToCar(product)
+	}
 
 	return (
-		<div>
-			find
+		<div className="find-produc">
+			{isLoading
+				? 'Cargando ..'
+				: <ListProducts listCard={response} handleClickBotton={handleAddToCar}/>
+			}
 		</div>
 	)
 }

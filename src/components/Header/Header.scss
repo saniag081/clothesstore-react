@@ -1,12 +1,16 @@
 .header{
 	padding: .6rem 1.5rem;
 	&-container{
+		a{
+			text-decoration: none;
+		}
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		justify-content: space-between;
 		&-title{
 			font-size: 35px;
 			margin: 0;
+			color: var(--black-color);
 		}
 		.btn-menu,
 		.shopping{
@@ -19,6 +23,12 @@
 			align-items: center;
 			gap: .8rem;
 			grid-template-columns: minmax(200px, 450px) 30px 30px 139px;
+			a{
+				text-decoration: none;
+				span{
+					color: var(--grey-bold);
+				}
+			}
 		}
 	}
 }

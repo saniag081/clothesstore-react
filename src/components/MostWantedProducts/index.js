@@ -1,9 +1,20 @@
-import Wrapper from '../Wrapper/index';
-import Card from '../Card';
+import { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import Wrapper from '../Wrapper/index';
+import useFetchDataApi from '../../hooks/useFetchDataApi';
+import Card from '../Card';
 import './MostWantedProducts.scss';
 
 function MostWantedProducts() {
+	const API = 'sites/MCO/search?q=jeans'
+	const {isLoading, response} = useFetchDataApi(API)
+	const { addToCar } = useContext(AppContext);
+
+	const handleAddtoCar = (product) => {
+		addToCar(product)
+	}
+
 	const optionsOfSplide = {
 		perPage: 4,
 		gap: '30px',
@@ -21,55 +32,16 @@ function MostWantedProducts() {
 		<article className="wanted-products">
 			<Wrapper>
 				<h2 className="wanted-products-title">PRODUCTOS MÁS BUSCADOS</h2>
+				{isLoading && 'Cargando...'}
 				<Splide options={optionsOfSplide} >
-					<SplideSlide>
-						<Card
-							pathImage="./card.png"
-							text="Blusa Color sólido manga larga talla M 1"
-							price="$200.000"
-							discountPrice="$100.452"
-						/>
-					</SplideSlide>
-					<SplideSlide>
-						<Card
-							pathImage="./card.png"
-							text="Blusa Color sólido manga larga talla M 2"
-							price="$200.000"
-							discountPrice="$100.452"
-						/>
-					</SplideSlide>
-					<SplideSlide>
-						<Card
-							pathImage="./card.png"
-							text="Blusa Color sólido manga larga talla M 3"
-							price="$200.000"
-							discountPrice="$100.452"
-						/>
-					</SplideSlide>
-					<SplideSlide>
-						<Card
-							pathImage="./card.png"
-							text="Blusa Color sólido manga larga talla M 4"
-							price="$200.000"
-							discountPrice="$100.452"
-						/>
-					</SplideSlide>
-					<SplideSlide>
-						<Card
-							pathImage="./card.png"
-							text="Blusa Color sólido manga larga talla M 5"
-							price="$200.000"
-							discountPrice="$100.452"
-						/>
-					</SplideSlide>
-					<SplideSlide>
-						<Card
-							pathImage="./card.png"
-							text="Blusa Color sólido manga larga talla M 6"
-							price="$200.000"
-							discountPrice="$100.452"
-						/>
-					</SplideSlide>
+					{response.map((product) => (
+						<SplideSlide key={product.id}>
+							<Card
+								product={product}
+								handleClickBotton={handleAddtoCar}
+							/>
+						</SplideSlide>
+					))}
 				</Splide>
 			</Wrapper>
 		</article>

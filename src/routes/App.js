@@ -1,7 +1,8 @@
 import './App.scss';
 import Home from '../pages/Home';
 import FindProducts from '../pages/FindProduct';
-import Cart from '../pages/Cart';
+import Car from '../pages/Car';
+import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
 import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
@@ -22,7 +23,8 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/search/:id" component={FindProducts}/>
-              <Route exact path="/cart" component={Cart}/>
+              <Route exact path="/cart" component={Car}/>
+              <Route component={NotFound} />
             </Switch>
           </Layout>
         </Router>

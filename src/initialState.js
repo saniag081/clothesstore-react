@@ -1,6 +1,6 @@
 let initialState = {
-	cart: [],
-	search: [],
+	car: [],
+	searchResults: [],
 	products: [],
 	isShowNav: false
 }

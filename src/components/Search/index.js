@@ -12,8 +12,6 @@ function Search({ placeholder = 'Write', ...all }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log(history)
-		debugger
 		history.push(`/search/${dataSearch}`)
 	}
 
